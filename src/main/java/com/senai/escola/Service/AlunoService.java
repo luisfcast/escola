@@ -8,22 +8,23 @@ import java.util.List;
 
 @Service
 public class AlunoService {
-     private final AlunoRepository repository;
+    private final AlunoRepository repository;
 
     public AlunoService(AlunoRepository repository) {
         this.repository = repository;
     }
 
 
-    public List<Aluno> buscarAlunos(){
+    public List<Aluno> buscarAlunos() {
         return repository.findAll();
     }
 
 
-    public Aluno salvarNovoAluno(Aluno aluno){
+    public Aluno salvarNovoAluno(Aluno aluno) {
         return repository.save(aluno);
     }
-     public Aluno buscarAluno(Long id){
+
+    public Aluno buscarAlunoId(Long id) {
         return repository.findById(id).orElse(null);
     }
 
